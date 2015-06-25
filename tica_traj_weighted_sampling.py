@@ -19,7 +19,7 @@ import tica_run.tica_methods as tmeth
 def run_sampling(args):
     topology = args.topfile
     ticadim = 10
-    num_sample_frames = 10
+    num_sample_frames = 10000
     tica_lag_time = 50
     fn = args.filedir #file name
     wn = args.weights #weights name
