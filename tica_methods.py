@@ -95,10 +95,10 @@ def plot_eigen_series(eigenvalue, title, time_scale=None, axise=None, axist=None
 def plot_output(outputs, title, time_scale=None):
     if time_scale == None:
         unit_string = "ns"
-        time_value = np.arange(0, np.shape(outputs)[0])*time_scale
+        time_value = np.arange(0, np.shape(outputs)[0])
     else:
         unit_string = "arb" 
-        time_value = np.arange(0, np.shape(outputs)[0])
+        time_value = np.arange(0, np.shape(outputs)[0])*time_scale
         
     for i in xrange(np.shape(outputs)[1]):
         plt.figure()
