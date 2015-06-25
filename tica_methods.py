@@ -44,7 +44,7 @@ def plot_time_lag_series(data, time_scale, title, axis=None):
     plt.show()
     
     
-def plot_eigen_series(eigenvalue, title, time_scale=None):
+def plot_eigen_series(eigenvalue, title, time_scale=None, axise=None, axist=None):
     #eigenvalues is a 1-D array
     #time_scale is the lag time used for this data in ns
     
@@ -54,7 +54,11 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     plt.plot(np.arange(0, np.shape(eigenvalue)[0]), eigenvalue, 'ok')
     plt.xlabel("EigenNumber", fontsize=20)
     plt.ylabel("Eigenvalue", fontsize=20)
-    plt.axis([0, np.shape(eigenvalue)[0] + 0.5, np.min(eigenvalue)-0.1, 1.1])
+    
+    if axise == None:
+        plt.axis([0, np.shape(eigenvalue)[0] + 0.5, np.min(eigenvalue)-0.1, 1.1])
+    else:
+        plt.axis(axise)
     plt.savefig("%s_eigenvalue.png" %title)
     
     
@@ -81,7 +85,10 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     maxvalue = np.max(eigen_time_scale)
     minvalue = np.min(eigen_time_scale)
     diff = maxvalue - minvalue
-    plt.axis([0, np.shape(eigenvalue)[0] + 0.5, minvalue-(diff*0.1), maxvalue+(diff*0.1)])
+    if axist == None:
+        plt.axis([0, np.shape(eigenvalue)[0] + 0.5, minvalue-(diff*0.1), maxvalue+(diff*0.1)])
+    else:
+        plt.axis(axist)
     plt.savefig("%s_timescale.png" %title)
     plt.show()
 
