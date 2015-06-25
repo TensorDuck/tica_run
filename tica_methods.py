@@ -44,7 +44,7 @@ def plot_time_lag_series(data, time_scale, title, axis=None):
     plt.show()
     
     
-def plot_eigen_series(eigenvalues, title, time_scale=None):
+def plot_eigen_series(eigenvalue, title, time_scale=None):
     #eigenvalues is a 1-D array
     #time_scale is the lag time used for this data in ns
     
