@@ -14,6 +14,7 @@ import analysis_scripts.plot_package as pltpkg
 import argparse
 import time
 import os
+import tica_run.tica_methods as tmeth
 
 def run_sampling(args):
     topology = args.topfile
@@ -28,7 +29,7 @@ def run_sampling(args):
     #first time
     time1 = time.clock()
     feat = coor.featurizer(topology)
-    feat.add_distances_ca()
+    feat.add_distances(tmeth.generate_pairs(5, 288, 4, 4))
     selected_frames = np.random.choice(args.number_traj, size=num_sample_frames, replace=True, p=weights)
     
     selected_files = []
