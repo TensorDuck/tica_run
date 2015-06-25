@@ -3,13 +3,15 @@ For performing a single TICA run and outputting the desired files.
 """
 
 import numpy as np
+import mdtraj as md
+import time
+import argparse
 try:
     import pyemma
     import pyemma.coordinates as coor
 except:
     print "pyemma not imported!"
-import mdtraj as md
-import time
+
 import analysis_scripts.plot_package as pltpkg
 import tica_run.tica_methods as tmeth
 
