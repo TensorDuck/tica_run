@@ -54,7 +54,7 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     plt.plot(np.arange(0, np.shape(eigenvalue)[0]), eigenvalue, 'ok')
     plt.xlabel("EigenNumber", fontsize=20)
     plt.ylabel("Eigenvalue", fontsize=20)
-    plt.axis[0, np.shape(eigenvalue)[0] + 0.5, 0, 1.1]
+    plt.axis([0, np.shape(eigenvalue)[0] + 0.5, 0, 1.1])
     plt.savefig("%s_eigenvalue" %title)
     
     
@@ -81,7 +81,7 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     maxvalue = np.max(eigen_time_scale)
     minvalue = np.min(eigen_time_scale)
     diff = maxvalue - minvalue
-    plt.axis[0, np.shape(eigenvalue)[0] + 0.5, minvalue-(diff*0.1), maxvalue+(diff*0.1)]
+    plt.axis([0, np.shape(eigenvalue)[0] + 0.5, minvalue-(diff*0.1), maxvalue+(diff*0.1)])
     plt.savefig("%s_timescale" %title)
     plt.show()
 
