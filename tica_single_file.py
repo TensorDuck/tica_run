@@ -17,7 +17,7 @@ import tica_run.tica_methods as tmeth
 
 def run_analysis(args):
     feat = coor.featurizer(args.topfile)
-    feat.add_distances(tmeth.generate_pairs(start, stop, step, cut))
+    feat.add_distances(tmeth.generate_pairs(args.range[0],args.range[1], args.step_size, args.cut_value))
     traj = coor.load(args.traj_file, feat, stride=args.stride)
     tica_obj = coor.tica(traj, stride=1, lag=args.lag, dim=args.ticadim)
     outputs = tica_obj.get_output()[0]
