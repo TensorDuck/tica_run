@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def generate_pairs(start, stop, step, cut):
+    pair = []
     for i in np.arange(start, stop, step):
         for j in np.arange(i+cut, stop, cut):
             pair.append([i, j])
