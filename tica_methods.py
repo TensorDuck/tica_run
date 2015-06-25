@@ -55,7 +55,7 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     plt.xlabel("EigenNumber", fontsize=20)
     plt.ylabel("Eigenvalue", fontsize=20)
     plt.axis([0, np.shape(eigenvalue)[0] + 0.5, 0, 1.1])
-    plt.savefig("%s_eigenvalue" %title)
+    plt.savefig("%s_eigenvalue.png" %title)
     
     
     
@@ -82,7 +82,7 @@ def plot_eigen_series(eigenvalue, title, time_scale=None):
     minvalue = np.min(eigen_time_scale)
     diff = maxvalue - minvalue
     plt.axis([0, np.shape(eigenvalue)[0] + 0.5, minvalue-(diff*0.1), maxvalue+(diff*0.1)])
-    plt.savefig("%s_timescale" %title)
+    plt.savefig("%s_timescale.png" %title)
     plt.show()
 
 def plot_output(outputs, title, time_scale=None):
@@ -99,7 +99,7 @@ def plot_output(outputs, title, time_scale=None):
         plt.xlabel("Time (%s)"%unit_string, fontsize=20)
         plt.ylabel("TICA value", fontsize=20)
         plt.title("TICA Eigenvalue %d" % i, fontsize=20)
-        plt.savefig("%s_output_%d" %(title, i))
+        plt.savefig("%s_output_%d.png" %(title, i))
   
         
     
