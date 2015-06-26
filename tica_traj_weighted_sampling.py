@@ -20,7 +20,7 @@ def run_sampling(args):
     topology = args.topfile
     ticadim = 10
     num_sample_frames = 10000
-    tica_lag_time = 50
+    tica_lag_time = 5
     fn = args.filedir #file name
     wn = args.weights #weights name
     
@@ -38,7 +38,7 @@ def run_sampling(args):
         selected_files.append("%s/traj%d.xtc"%(fn,i))
     time2 = time.clock()
     print "Took %f minutes to select new frames" % ((time2-time1)/60.0)
-    sampled_frames = coor.load(selected_files, feat, stride=1)
+    sampled_frames = coor.load(selected_files, feat, stride=10)
     
     time3 = time.clock()
     print "Took %f minutes to load the new frames" % ((time3-time2)/60.0)
