@@ -22,8 +22,8 @@ def run_analysis(args):
     tica_obj = coor.tica(traj, stride=1, lag=args.lag, dim=args.ticadim)
     outputs = tica_obj.get_output()[0]
     eigen = tica_obj.eigenvalues
-    np.savetxt("output_L%d.dat"%i, outputs)
-    np.savetxt("eigenvalues_L%d.dat"%i, eigen)
+    np.savetxt("%s_output_raw.dat"%args.title, outputs)
+    np.savetxt("%s_eigenvalues_raw.dat"%args.title, eigen)
     tmeth.plot_eigen_series(eigen, args.title, time_scale=args.time_step*args.stride)
     tmeth.plot_output(outputs, args.title, time_scale=args.time_step*args.stride)
 
