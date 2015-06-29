@@ -52,7 +52,7 @@ def run_sampling(args):
         all_outputs = np.append(all_outputs, outputs, axis=0)
     eigen = tica_obj.eigenvalues
     print "saving files"
-    np.savetxt("output.dat", outputs)
+    np.savetxt("output.dat", all_outputs)
     np.savetxt("eigenvalues.dat", eigen)
     print "files saved"
     time5 = time.clock()
