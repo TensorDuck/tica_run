@@ -54,6 +54,7 @@ def run_sampling(args):
     print "saving files"
     np.savetxt("output.dat", all_outputs)
     np.savetxt("eigenvalues.dat", eigen)
+    np.savetxt("selected_frames.dat", selected_frames)
     print "files saved"
     time5 = time.clock()
     print "Took %f minutes to write the output files" % ((time5-time4)/60.0)
