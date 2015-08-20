@@ -49,7 +49,7 @@ if __name__ == "__main__":
     #X1 = md.compute_distances(traj, [[115, 192]], periodic=False)
 
     print np.shape(X1)
-    possible_times = np.logspace(0,3,50)
+    possible_times = np.logspace(1,100,5)
     possible_times = possible_times.astype(int)
     lag_times = []
     for i in possible_times:
