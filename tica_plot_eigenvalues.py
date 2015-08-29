@@ -23,7 +23,7 @@ if __name__ == "__main__":
     feat = coor.featurizer(topology)
 
     pair = []
-    cutoff = 4
+    cutoff = 2
     start = 5
     stop = 288
     ##debug
@@ -32,8 +32,8 @@ if __name__ == "__main__":
     #stop = 50
     ##debugg
 
-    for i in np.arange(start, stop, 1):
-        for j in np.arange(i+1, stop, cutoff):
+    for i in np.arange(start, stop, cutoff):
+        for j in np.arange(i+4, stop, cutoff):
             pair.append([i, j])
         
     print np.shape(pair)
